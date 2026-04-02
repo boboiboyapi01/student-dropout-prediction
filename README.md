@@ -93,8 +93,7 @@ streamlit run app.py
 
 **Akses prototype online:**
 
-> 🔗 **[https://your-app-name.streamlit.app](https://your-app-name.streamlit.app)**
-> *(Ganti link ini dengan URL Streamlit Community Cloud Anda)*
+> 🔗 **[https://student-dropout-prediction-m7mut4z7t5qgqpwjpgxszq.streamlit.app/](https://student-dropout-prediction-m7mut4z7t5qgqpwjpgxszq.streamlit.app/)**
 
 **Fitur prototype:**
 - Input data mahasiswa secara manual melalui form interaktif.
