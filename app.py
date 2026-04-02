@@ -52,7 +52,7 @@ st.markdown("""
 # ─── HEADER ──────────────────────────────────────────────────────────────────
 st.markdown('<p class="main-title">🎓 Jaya Jaya Institut</p>', unsafe_allow_html=True)
 st.markdown("### Student Dropout Early Warning System")
-st.markdown("Masukkan data mahasiswa untuk memprediksi kemungkinan status akhir mereka: **Dropout**, **Enrolled**, atau **Graduate**.")
+st.markdown("Masukkan data mahasiswa untuk memprediksi kemungkinan status akhir mereka: **Dropout**atau **Graduate**.")
 st.divider()
 
 # ─── SIDEBAR ─────────────────────────────────────────────────────────────────
@@ -66,8 +66,8 @@ with st.sidebar:
     """)
     st.divider()
     st.markdown("**Model:** Random Forest Classifier")
-    st.markdown("**Kelas Target:** Dropout | Enrolled | Graduate")
-    st.caption("Jaya Jaya Institut © 2024")
+    st.markdown("**Kelas Target:** Dropout | Graduate")
+    st.caption("Shadiqul Baik Hati © 2026")
 
 # ─── FORM INPUT ──────────────────────────────────────────────────────────────
 if model_loaded:
@@ -201,8 +201,8 @@ if model_loaded:
         st.subheader("📈 Hasil Prediksi")
 
         # Tampilkan hasil utama
-        css_class = {"Dropout": "dropout-box", "Enrolled": "enrolled-box", "Graduate": "graduate-box"}
-        icon = {"Dropout": "🚨", "Enrolled": "📚", "Graduate": "🎓"}
+        css_class = {"Dropout": "dropout-box", "Graduate": "graduate-box"}
+        icon = {"Dropout": "🚨", "Graduate": "🎓"}
 
         st.markdown(f"""
         <div class="predict-box {css_class[pred_label]}">
@@ -222,8 +222,8 @@ if model_loaded:
         # Tampilkan probabilitas
         st.markdown("#### Probabilitas Per Kelas")
         prob_cols = st.columns(len(le_target.classes_))
-        icons_map = {"Dropout": "🚨", "Enrolled": "📚", "Graduate": "🎓"}
-        colors_map = {"Dropout": "#e53935", "Enrolled": "#1e88e5", "Graduate": "#43a047"}
+        icons_map = {"Dropout": "🚨", "Graduate": "🎓"}
+        colors_map = {"Dropout": "#ec1f1c", "Graduate": "#2cba33"}
 
         for col_ui, (cls, prob) in zip(prob_cols, zip(le_target.classes_, pred_proba)):
             with col_ui:
@@ -237,17 +237,10 @@ if model_loaded:
         st.markdown("#### 💡 Rekomendasi Tindakan")
         if pred_label == "Dropout":
             st.error("""
-            **⚠️ Mahasiswa ini berisiko tinggi dropout!** Tindakan yang disarankan:
+            **⚠️ Mahasiswa ini berisiko dropout!** Tindakan yang disarankan:
             - Segera jadwalkan sesi konseling akademik
             - Evaluasi kondisi finansial dan tawarkan program cicilan/beasiswa
             - Pantau kehadiran dan performa di semester berikutnya secara intensif
-            """)
-        elif pred_label == "Enrolled":
-            st.warning("""
-            **📌 Mahasiswa masih dalam proses studi.** Tindakan yang disarankan:
-            - Berikan motivasi dan dukungan akademik rutin
-            - Pastikan mahasiswa memiliki akses ke sumber daya belajar yang memadai
-            - Monitor tren nilai semester demi semester
             """)
         else:
             st.success("""

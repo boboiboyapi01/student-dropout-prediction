@@ -12,7 +12,7 @@ Berdasarkan konteks di atas, berikut adalah permasalahan bisnis yang akan disele
 
 1. **Tingginya angka dropout mahasiswa** — Institusi belum memiliki sistem yang dapat mendeteksi mahasiswa berisiko tinggi dropout secara dini dan otomatis.
 2. **Kurangnya visibilitas data performa mahasiswa** — Manajemen kesulitan memantau tren dan pola performa mahasiswa secara menyeluruh dan real-time.
-3. **Tidak adanya alat prediksi yang dapat digunakan staf** — Konselor dan staf akademik tidak memiliki tools yang mudah digunakan untuk memprediksi status akhir seorang mahasiswa (dropout, enrolled, atau graduate).
+3. **Tidak adanya alat prediksi yang dapat digunakan staf** — Konselor dan staf akademik tidak memiliki tools yang mudah digunakan untuk memprediksi status akhir seorang mahasiswa (dropout atau graduate).
 
 ### Cakupan Proyek
 
@@ -97,7 +97,7 @@ streamlit run app.py
 
 **Fitur prototype:**
 - Input data mahasiswa secara manual melalui form interaktif.
-- Prediksi status mahasiswa: **Dropout**, **Enrolled**, atau **Graduate**.
+- Prediksi status mahasiswa: **Dropout** atau **Graduate**.
 - Menampilkan probabilitas prediksi untuk setiap kelas.
 - Menampilkan faktor-faktor paling berpengaruh terhadap prediksi (*feature importance*).
 
@@ -107,7 +107,7 @@ streamlit run app.py
 
 Berdasarkan hasil analisis data dan pemodelan Machine Learning yang telah dilakukan, diperoleh beberapa kesimpulan utama:
 
-1. **Model Random Forest** berhasil memprediksi status mahasiswa (Dropout, Enrolled, Graduate) dengan akurasi yang baik (>80%), menggunakan fitur akademik semester 1 dan 2 sebagai prediktor terkuat.
+1. **Model Random Forest** berhasil memprediksi status mahasiswa (Dropout, Enrolled, Graduate) dengan akurasi yang baik (90.63%), menggunakan fitur akademik semester 1 dan 2 sebagai prediktor terkuat.
 
 2. **Faktor-faktor paling berpengaruh** terhadap risiko dropout mahasiswa adalah:
    - Jumlah mata kuliah yang **disetujui (approved)** di semester 1 dan 2.
@@ -122,7 +122,7 @@ Berdasarkan hasil analisis data dan pemodelan Machine Learning yang telah dilaku
 
 ### Rekomendasi Action Items
 
-Berdasarkan hasil analisis, berikut adalah rekomendasi tindakan yang dapat dilakukan oleh Jaya Jaya Institut:
+Berdasarkan hasil analisis, berikut adalah rekomendasi tindakan yang dapat dilakukan:
 
 - **Action Item 1 — Sistem Early Warning Otomatis:** Implementasikan prototype machine learning yang telah dibuat ke dalam sistem informasi akademik, sehingga staf konselor mendapatkan notifikasi otomatis ketika seorang mahasiswa teridentifikasi berisiko tinggi dropout.
 
